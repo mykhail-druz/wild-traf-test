@@ -9,6 +9,9 @@ A simple blog application built with Next.js and Firebase. This project allows u
 - View individual post details
 - Responsive design with Tailwind CSS
 - Firebase integration for data storage
+- Custom 404 page for handling not found routes
+- Skeleton loaders for content during loading states
+- Minimalistic loading spinner with size variants
 
 ## Technologies Used
 
@@ -43,7 +46,15 @@ A simple blog application built with Next.js and Firebase. This project allows u
 3. Set up Firebase
    - Create a Firebase project
    - Set up Firestore database
-   - Add your Firebase configuration to `src/lib/firebase.ts`
+   - Add your Firebase configuration to `.env.local` file:
+     ```
+     NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+     NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+     NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+     NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+     NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+     NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+     ```
 
 4. Start the development server
    ```bash
@@ -61,6 +72,7 @@ A simple blog application built with Next.js and Firebase. This project allows u
 - `/src/hooks` - Custom React hooks
 - `/src/lib` - Utility functions and Firebase setup
 - `/src/types` - TypeScript type definitions
+- `.eslintrc.json` - ESLint configuration with rules for unused variables
 
 ## Available Scripts
 
