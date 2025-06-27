@@ -10,6 +10,7 @@ import { SubmitButton } from '@/components/form/SubmitButton'
 import { useForm } from '@/hooks/useForm'
 import { createPost } from '@/lib/posts'
 import { PostFormData } from '@/types/post'
+import toast from 'react-hot-toast'
 
 export default function AddPostPage() {
     const router = useRouter()
@@ -31,9 +32,10 @@ export default function AddPostPage() {
     const handleFormSubmit = async (values: PostFormData): Promise<void> => {
         try {
             const postId = await createPost(values)
+            toast.success('Post created successfully!')
             router.push(`/post/${postId}`)
         } catch (error) {
-            alert(
+            toast.error(
                 `Failed to create post: ${error instanceof Error ? error.message : 'Unknown error'}`
             )
             throw error // Re-throw to let the form hook handle the error state
@@ -49,7 +51,7 @@ export default function AddPostPage() {
 
     return (
         <PageContainer className="max-w-2xl">
-            <BackLink href="/" label="← Back to Posts" />
+            <BackLink href="/" label="Back to Posts" variant={'button'} />
 
             <div className="bg-white rounded-lg shadow-sm border p-8">
                 <h1 className="text-2xl font-bold text-gray-900 mb-6">

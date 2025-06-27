@@ -37,7 +37,7 @@ export default function PostDetailPage() {
 
     return (
         <PageContainer>
-            <BackLink href="/" label="Back to Posts" />
+            <BackLink href="/" label="Back to Posts" variant={'button'} />
             <PostContent post={post} />
         </PageContainer>
     )
