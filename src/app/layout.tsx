@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         title: 'Wild Traff - Simple Blog',
         description:
             'A simple blog built with Next.js and Firebase for creating and sharing posts',
-        url: 'https://wild-traf-blog.example.com',
+        url: 'https://wild-traf-test.vercel.app/',
         siteName: 'Wild Traff Blog',
         locale: 'en_US',
         type: 'website',
